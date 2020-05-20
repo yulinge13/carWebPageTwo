@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import SwiperCom from '../../components/swiperTwo/index'
+import video1 from '../../static/images/v1.mp4'
+import peizhi from '../../static/images/11.jpg'
 import './home.less'
 import bg from "../../static/images/bg.jpg"
 import httpLists from '../../utils/http'
@@ -50,37 +52,29 @@ class HomePage extends Component {
             ],
             distributorLists: [
                 {
-                    name: '重庆东风南方渝兴专营店',
-                    id: 'J0402'
+                    name: '广汽传祺三和店',
+                    id: '1'
                 },
                 {
-                    name: '重庆东风南方渝发专营店',
-                    id: 'J0407'
+                    name: '广汽传祺新元素店',
+                    id: '2'
                 },
                 {
-                    name: '重庆东风南方渝东专营店',
-                    id: 'J0408'
+                    name: '广汽传祺金致店',
+                    id: '3'
                 },
                 {
-                    name: '重庆东风南方盛泰专营店',
-                    id: 'J0411'
+                    name: '广汽传祺长缘捷龙店',
+                    id: '4'
                 },
                 {
-                    name: '重庆广汇都灵专营店',
-                    id: 'J0405'
+                    name: '广汽传祺益传中宝店',
+                    id: '5'
                 },
                 {
-                    name: '重庆商社西星专营店',
-                    id: 'J0403'
+                    name: '广汽传祺信祺店',
+                    id: '6'
                 },
-                {
-                    name: '万州盛泰飞骏专营店',
-                    id: 'J0406'
-                },
-                {
-                    name: '涪陵商社文化专营店',
-                    id: 'J0410'
-                }
             ],
             carLists: [
                 {
@@ -182,13 +176,16 @@ class HomePage extends Component {
             tel: e.target.value
         })
     }
+    linkToMore(){
+        window.location.href = 'https://www.gacmotor.com'
+    }
     render() {
         const {
             distributorLists,
             carLists,
             distributorVal,
             carValue,
-            detailsPicListsOne
+            detailsPicListsOne,
         } = this.state
         return (
             <div className="home_page">
@@ -243,6 +240,9 @@ class HomePage extends Component {
                     </div>
                     <div className="submit_btn" onTouchStart={this.handleSubmit.bind(this)}>马上预约</div>
                 </div>
+                <div className="vadio">
+                    <video src={video1} controls="controls"></video>
+                </div>
                 <div className="swiper_cont">
                     <SwiperCom>
                         {
@@ -257,6 +257,10 @@ class HomePage extends Component {
                         }
                     </SwiperCom>
                 </div>
+                <div className="peizhi">
+                    <img className="bg1" src={peizhi} alt="" />
+                </div>
+                <div className="link_to_more" onClick={this.linkToMore}></div>
             </div>
         )
     }
