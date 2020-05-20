@@ -16,13 +16,37 @@
     .bg4{
         width: 100%;
     }
+    .swiper_cont{
+        width: 752*@rex;
+        position: absolute;
+        top: 2188*@rex;
+        left: 0*@rex;
+        box-sizing: border-box;
+        .detail_pic{
+            width: 100% !important;
+            height: 506*@rex;
+            .detail_img{
+                width: 100%;
+                height: 506*@rex;
+                float: left;
+            }
+            .detail_content{
+                height: 77*@rex;
+                line-height: 77*@rex;
+                text-align: center;
+                color: #002d51;
+                font-size: 17*@rex;
+                letter-spacing: 15*@rex;
+            }
+        }
+    }
     .fill_lists_tow{
         display: flex;
         .fill_list_tow{
             display: flex;
             height: 52*@rex;
             line-height: 52*@rex;
-            margin-bottom: 27*@rex;fbg
+            margin-bottom: 27*@rex;
             .fill_list_tow_name{
                 font-size: 20*@rex;
                 color: #343436;
@@ -89,19 +113,18 @@
         }
     }
     .ask_price{
-        width: 670*@rex;
-        height: 723*@rex;
+        width: 636*@rex;
+        height: 328*@rex;
         position: absolute;
-        top: 847*@rex;
-        left: 35*@rex;
+        top: 1044*@rex;
+        left: 59*@rex;
         box-sizing: border-box;
         .fill_lists{
             .fill_list{
                 display: flex;
-                margin-bottom: 23*@rex;
-                height: 82*@rex;
-                line-height: 82*@rex;
-                border-radius: 12*@rex;
+                margin-bottom: 16*@rex;
+                height: 71*@rex;
+                line-height: 71*@rex;
                 background: #eeeeee;
                 .fill_val{
                     width: 100%;
@@ -109,7 +132,6 @@
                     box-sizing: border-box;
                     border-left: none;
                     background: #eeeeee;
-                    border-radius: 12*@rex;
                     select{
                         width: 100%;
                         height: 100%;
@@ -118,11 +140,11 @@
                         outline: none;
                         -webkit-appearance: none;
                         background: #eeeeee;
-                        border-radius: 12*@rex;
                         color: #101117;
                         padding-left: 40*@rex;
                         box-sizing: border-box;
-                        font-size: 34*@rex;
+                        font-size: 38*@rex;
+                        border: 1*@rex solid #2854d9;
                     }
                     input{
                         width: 100%;
@@ -132,35 +154,13 @@
                         outline: none;
                         padding-left: 40*@rex;
                         box-sizing: border-box;
-                        font-size: 34*@rex;
+                        font-size: 38*@rex;
                         background: #eeeeee;
-                        border-radius: 12*@rex;
                         color: #101117;
+                        border: 1*@rex solid #2854d9;
                     }
                     input::-webkit-input-placeholder{
                         color: #101117;
-                    }
-                    .icon{
-                        position: absolute;
-                        top:0;
-                    }
-                    .icon1{
-                        width: 33*@rex;
-                        height: 34*@rex;
-                        right: 8*@rex;
-                        top: 6*@rex;
-                    }
-                    .icon2{
-                        width: 23*@rex;
-                        height: 36*@rex;
-                        right:14*@rex;
-                        top: 6*@rex;
-                    }
-                    .icon3{
-                        width: 27*@rex;
-                        height: 27*@rex;
-                        right:8*@rex;
-                        top: 10*@rex
                     }
                 }
             }
@@ -179,17 +179,14 @@
             }
         }
         .submit_btn{
-            width: 670*@rex;
-            height: 82*@rex;
-            line-height: 82*@rex;
-            margin-top: 23*@rex;
-            border-radius: 4*@rex;
-            background: #cd0123;
-            font-size: 33*@rex;
+            width: 636*@rex;
+            height: 71*@rex;
+            line-height: 71*@rex;
+            background: #2f3438;
+            font-size: 38*@rex;
             color: #fff;
             text-align: center;
             font-weight: bold;
-            border-radius: 12*@rex;
         }
     }
     .distributor{

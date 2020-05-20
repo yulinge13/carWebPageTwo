@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
+import SwiperCom from '../../components/swiperTwo/index'
 import './home.less'
-import bg1 from "../../static/images/bg1.png"
-import bg2 from "../../static/images/bg2.jpg"
-import bg3 from "../../static/images/bg3.jpg"
-import bg4 from "../../static/images/bg4.jpg"
+import bg from "../../static/images/bg.jpg"
 import httpLists from '../../utils/http'
 import {
     message,
@@ -16,6 +14,40 @@ class HomePage extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            detailsPicListsOne: [
+                {
+                    url: require('../../static/images/01.JPG'),
+                    cont: '19英寸个性轮辋'
+                },
+                {
+                    url: require('../../static/images/02.JPG'),
+                    cont: '19英寸个性轮辋'
+                }, {
+                    url: require('../../static/images/03.JPG'),
+                    cont: '19英寸个性轮辋'
+                }, {
+                    url: require('../../static/images/04.jpg'),
+                    cont: '19英寸个性轮辋'
+                }, {
+                    url: require('../../static/images/05.JPG'),
+                    cont: '19英寸个性轮辋'
+                }, {
+                    url: require('../../static/images/06.JPG'),
+                    cont: '19英寸个性轮辋'
+                }, {
+                    url: require('../../static/images/07.JPG'),
+                    cont: '19英寸个性轮辋'
+                }, {
+                    url: require('../../static/images/08.JPG'),
+                    cont: '19英寸个性轮辋'
+                }, {
+                    url: require('../../static/images/09.JPG'),
+                    cont: '19英寸个性轮辋'
+                }, {
+                    url: require('../../static/images/10.JPG'),
+                    cont: '19英寸个性轮辋'
+                },
+            ],
             distributorLists: [
                 {
                     name: '重庆东风南方渝兴专营店',
@@ -120,20 +152,19 @@ class HomePage extends Component {
             name,
             tel,
             distributorVal,
-            carValue
         } = this.state
-        if (name && tel && distributorVal && carValue) {
+        if (name && tel && distributorVal) {
             if ((/^1[34578]\d{9}$/.test(tel))) {
                 makeAppointment({
-                    MEDIA_LEAD_ID:'124840',
-                    FK_DEALER_ID:distributorVal,
-                    CUSTOMER_NAME:name,
-                    SMART_CODE:'A0000-000-000-00-00000',
-                    OPERATE_TYPE:0,
-                    STATUS:'0',
-                    MOBILE:tel
+                    MEDIA_LEAD_ID: '124840',
+                    FK_DEALER_ID: distributorVal,
+                    CUSTOMER_NAME: name,
+                    SMART_CODE: 'A0000-000-000-00-00000',
+                    OPERATE_TYPE: 0,
+                    STATUS: '0',
+                    MOBILE: tel
                 })
-                
+
             } else {
                 message.error('请输入正确的手机号')
             }
@@ -156,14 +187,12 @@ class HomePage extends Component {
             distributorLists,
             carLists,
             distributorVal,
-            carValue
+            carValue,
+            detailsPicListsOne
         } = this.state
         return (
             <div className="home_page">
-                <img className="bg1" src={bg1} alt="" />
-                <img className="bg2" src={bg2} alt="" />
-                <img className="bg3" src={bg3} alt="" />
-                <img className="bg4" src={bg4} alt="" />
+                <img className="bg1" src={bg} alt="" />
                 <div className="ask_price">
                     <div className="fill_lists">
                         <div className="fill_list">
@@ -193,7 +222,8 @@ class HomePage extends Component {
                                 </select>
                             </div>
                         </div>
-                        <div className="fill_list fill_list_last">
+
+                        {/* <div className="fill_list fill_list_last">
                             <div className="fill_val">
                                 <select
                                     onChange={e => this.selectCar(e)}
@@ -209,9 +239,23 @@ class HomePage extends Component {
                                     }
                                 </select>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
-                    <div className="submit_btn" onTouchStart={this.handleSubmit.bind(this)}>提交</div>
+                    <div className="submit_btn" onTouchStart={this.handleSubmit.bind(this)}>马上预约</div>
+                </div>
+                <div className="swiper_cont">
+                    <SwiperCom>
+                        {
+                            detailsPicListsOne.map((i, index) => {
+                                return (
+                                    <div className="detail_pic" key={index}>
+                                        <img className="detail_img" src={i.url} />
+                                        {/* <div className="detail_content">{i.cont}</div> */}
+                                    </div>
+                                )
+                            })
+                        }
+                    </SwiperCom>
                 </div>
             </div>
         )
